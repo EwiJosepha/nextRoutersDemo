@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { log } from "console";
 
 const prisma = new PrismaClient()
 
@@ -37,8 +36,8 @@ async function main() {
 
   // console.log(article);
 
-  const articles = await prisma.article.findMany()
-  console.log(articles);
+  // const articles = await prisma.article.findMany()
+  // console.log(articles);
 
 
   //create a user an article an associate  them
@@ -97,14 +96,23 @@ async function main() {
   // console.log(user);
 
   // remove data
-  const article = await prisma.article.delete({
-    where: {
-      id: 2,
+  // const article = await prisma.article.delete({
+  //   where: {
+  //     id: 2,
 
-    }
-  })
+  //   }
+  // })
 
-  console.log(article);
+  // console.log(article);
+
+  // model Article {
+  //   id Int @id @default(autoincrement())
+  //   title String
+  //   body String?
+  //   author User @relation(fields: [authorId], references: [id])
+  //   authorId Int
+   
+  //  }
   
 
 }
